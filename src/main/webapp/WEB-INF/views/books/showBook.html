@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book</title>
+</head>
+<body>
+<p th:text="${book.getName_book()+', '+book.getName_author()+', '+book.getYear_written()}">VALUE</p>
+
+<!--<p  th:unless="${person.isEmpty()}" th:text="${'The book is with '+person.getName()}" >The book is with person</p>-->
+
+<div th:switch="${person.isEmpty()}">
+    <p th:case="true">The book is with person</p>
+    <p th:case="false">The book isn't with person</p>
+</div>
+
+<a th:href="@{/books/{book_id}/edit(id=${book.getBook_id()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/books/{book_id}(book_id=${book.getBook_id()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
