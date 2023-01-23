@@ -55,7 +55,6 @@ public class PeopleController {
     @GetMapping("/people/{person_id}")
     public String showPerson(@PathVariable("person_id") int person_id, Model model){
         model.addAttribute("person", personDAO.showPerson(person_id));
-        System.out.println(bookDAO.listBookFromPerson(person_id).isEmpty());
         model.addAttribute("books", bookDAO.listBookFromPerson(person_id));
         return "people/showPerson";
     }

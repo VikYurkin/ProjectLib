@@ -9,10 +9,10 @@
 
 <!--<p  th:unless="${person.isEmpty()}" th:text="${'The book is with '+person.getName()}" >The book is with person</p>-->
 
-<div th:switch="${person.isEmpty()}">
-    <p th:case="true">The book is with person</p>
-    <p th:case="false">The book isn't with person</p>
-</div>
+<!--<div th:unless="${person.isEmpty()}">-->
+<!--<div th:if="${person.isEmpty()}">-->
+    <p th:text="${'The book is with '+person.getName()}">The book is with person</p>
+<!--</div>-->
 
 <a th:href="@{/books/{book_id}/edit(id=${book.getBook_id()})}">Edit</a>
 
