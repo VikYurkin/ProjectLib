@@ -3,33 +3,31 @@ package ru.VYurkin.contollers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.VYurkin.config.DAO.BookDAO;
 import ru.VYurkin.config.DAO.PersonDAO;
 import ru.VYurkin.models.Book;
 import ru.VYurkin.models.Person;
-//import ru.VYurkin.util.PersonValidator;
+import ru.VYurkin.util.BookValidator;
+import ru.VYurkin.util.PersonValidator;
 import javax.validation.Valid;
 
 @Controller
-//@RequestMapping("/people")
 public class PeopleAndBooksController {
     private final PersonDAO personDAO;
 
     private final BookDAO bookDAO;
-   // private final PersonValidator personValidator;
+    private final PersonValidator personValidator;
 
-//    @Autowired
-//    public PeopleController(PersonDAO personDAO, PersonValidator personValidator
-//    ) {
-//        this.personDAO = personDAO;
-//        this.personValidator = personValidator;
-//    }
+    private final BookValidator bookValidator;
 
     @Autowired
-    public PeopleAndBooksController(PersonDAO personDAO, BookDAO bookDAO) {
+    public PeopleAndBooksController(PersonDAO personDAO, BookDAO bookDAO, PersonValidator personValidator, BookValidator bookValidator) {
         this.personDAO = personDAO;
         this.bookDAO = bookDAO;
+        this.personValidator = personValidator;
+        this.bookValidator = bookValidator;
     }
 
 
@@ -57,6 +55,7 @@ public class PeopleAndBooksController {
         model.addAttribute("books", bookDAO.listBookFromPerson(person_id));
         return "people/showPerson";
     }
+
     @GetMapping("/books/{book_id}")
     public String showBook(@PathVariable("book_id") int book_id, Model model, @ModelAttribute("person") Person person){
         model.addAttribute("book", bookDAO.showBook(book_id));
@@ -86,14 +85,13 @@ public class PeopleAndBooksController {
     }
 
     @PostMapping("/people")
-    public String createPerson(@ModelAttribute("person") @Valid Person person
-           // , BindingResult bindingResult
-    ){
-     //   personValidator.validate(person, bindingResult);
+    public String createPerson(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult){
+        personValidator.validate(person, bindingResult);
+        if(bindingResult.hasErrors())
+            return "people/newPerson";
 
-       // if(bindingResult.hasErrors())
-       //     return "people/new";
         personDAO.savePerson(person);
+
         return "redirect:/people";
     }
 
@@ -103,13 +101,11 @@ public class PeopleAndBooksController {
     }
 
     @PostMapping("/books")
-    public String createBook(@ModelAttribute("book") @Valid Book book
-           // , BindingResult bindingResult
-    ){
-        //   personValidator.validate(person, bindingResult);
+    public String createBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult){
+           bookValidator.validate(book, bindingResult);
 
-       // if(bindingResult.hasErrors())
-       //     return "people/new";
+        if(bindingResult.hasErrors())
+            return "books/newBook";
 
         bookDAO.saveBook(book);
         return "redirect:/books";
@@ -127,12 +123,10 @@ public class PeopleAndBooksController {
     }
 
     @PatchMapping("/people/{person_id}")
-    public String updatePerson(@ModelAttribute("person") @Valid Person person
-            //, BindingResult bindingResult
-            , @PathVariable("person_id") int person_id){
-       // personValidator.validate(person, bindingResult);
-       // if(bindingResult.hasErrors())
-        //    return "people/edit";
+    public String updatePerson(@ModelAttribute("person") @Valid Person person, BindingResult bindingResult, @PathVariable("person_id") int person_id){
+        personValidator.validate(person, bindingResult);
+        if(bindingResult.hasErrors())
+            return "people/editPerson";
 
         personDAO.updatePerson(person_id,person);
         return "redirect:/people";
@@ -145,12 +139,10 @@ public class PeopleAndBooksController {
     }
 
     @PatchMapping("/books/{book_id}")
-    public String updateBook(@ModelAttribute("book") @Valid Book book
-                               //, BindingResult bindingResult
-            , @PathVariable("book_id") int book_id){
-        // personValidator.validate(person, bindingResult);
-        // if(bindingResult.hasErrors())
-        //    return "people/edit";
+    public String updateBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult, @PathVariable("book_id") int book_id){
+         bookValidator.validate(book, bindingResult);
+         if(bindingResult.hasErrors())
+            return "books/editBook";
 
         bookDAO.updateBook(book_id, book);
         return "redirect:/books";

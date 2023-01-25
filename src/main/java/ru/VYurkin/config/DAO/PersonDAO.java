@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import ru.VYurkin.models.Person;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class PersonDAO {
@@ -23,6 +24,11 @@ public class PersonDAO {
     public Person showPerson(int person_id) {
         return jdbcTemplate.query("SELECT*FROM Person WHERE person_id=?", new Object[]{person_id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny().orElse(null);
+    }
+
+    public Optional<Person> showPerson(String name) {
+        return jdbcTemplate.query("SELECT*FROM Person WHERE name=?", new Object[]{name}, new BeanPropertyRowMapper<>(Person.class))
+                .stream().findAny();
     }
 
 

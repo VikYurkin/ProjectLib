@@ -25,9 +25,8 @@ public class PersonValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Person person = (Person) o;
-        if(o==null){
-        //if(personDAO.show(person.getEmail()).isPresent()){
-           errors.rejectValue("email", "", "This email is already taken");
+        if(personDAO.showPerson(person.getName()).isPresent()){
+           errors.rejectValue("name", "", "Эти ФИО уже зарегистрированы");
         }
     }
 }

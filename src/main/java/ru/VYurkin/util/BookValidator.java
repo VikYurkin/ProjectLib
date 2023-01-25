@@ -5,9 +5,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import ru.VYurkin.config.DAO.BookDAO;
-import ru.VYurkin.config.DAO.PersonDAO;
 import ru.VYurkin.models.Book;
-import ru.VYurkin.models.Person;
+
+import java.util.List;
+
 
 @Component
 public class BookValidator implements Validator {
@@ -27,8 +28,12 @@ public class BookValidator implements Validator {
     @Override
     public void validate(Object o, Errors errors) {
         Book book = (Book) o;
-        if ((bookDAO.showBook(book.getBook_id()) == null) & (bookDAO.showBook(book.getBook_id()).getPerson_id() == 0)) {
-            errors.rejectValue("email", "", "This email is already taken");
+        List<Book> list = bookDAO.showBooks(book.getName_author());
+        for(Book bookInList:list){
+            System.out.println(book.getName_book().equals(bookInList.getName_book()));
+            if(book.getName_book().equals(bookInList.getName_book())){
+                errors.rejectValue("name_book", "", "Эта книга уже зарегистрирована");
+            }
         }
     }
 }

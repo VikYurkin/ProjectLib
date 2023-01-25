@@ -29,6 +29,12 @@ public class BookDAO {
 //                .stream().findAny().orElse(null);
 //    }
 
+    public List<Book> showBooks(String name_author) {
+        return jdbcTemplate.query("SELECT*FROM Book WHERE name_author=?", new Object[]{name_author}, new BookMapper());
+    }
+
+
+
     public void saveBook(Book book) {
         jdbcTemplate.update("INSERT INTO Book(name_book, name_author, year_written) VALUES ( ?, ?, ? )", book.getName_book(), book.getName_author(), book.getYear_written());
     }

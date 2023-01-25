@@ -1,6 +1,8 @@
 package ru.VYurkin.models;
-
-import javax.validation.constraints.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 public class Person {
 
@@ -8,6 +10,7 @@ public class Person {
 
     @NotEmpty(message = "ФИО не должны быть пустыми")
     @Size(min = 2, max = 100, message = "ФИО должны быть не короче 2 символов, и не длиннее 100 символов")
+    @Pattern(regexp ="[А-Я][а-я]+ [А-Я][а-я]+ [А-Я][а-я]+", message = "ФИО необходимо записать в виде: Иванов Иван Иванович")
     private String name;
 
     @Min(value = 1900, message = "Год рождения должен быть больше 1900")
