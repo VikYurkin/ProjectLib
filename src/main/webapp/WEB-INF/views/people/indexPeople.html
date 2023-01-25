@@ -8,16 +8,16 @@
 
 <div th:each="person : ${people}">
 
+
 <a th:href="@{/people/{person_id}(person_id=${person.getPerson_id()})}"
    th:text="${person.getName()+','+person.getYear_birth()}">user</a>
 
 </div>
 
 <br/>
-
 <hr/>
 
-<a href="/people/new">Create new person</a>
+<a href="/people/new">Добавить человека</a>
 
 </body>
 </html>

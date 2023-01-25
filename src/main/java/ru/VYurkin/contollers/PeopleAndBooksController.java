@@ -3,7 +3,6 @@ package ru.VYurkin.contollers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.VYurkin.config.DAO.BookDAO;
 import ru.VYurkin.config.DAO.PersonDAO;
@@ -14,7 +13,7 @@ import javax.validation.Valid;
 
 @Controller
 //@RequestMapping("/people")
-public class PeopleController {
+public class PeopleAndBooksController {
     private final PersonDAO personDAO;
 
     private final BookDAO bookDAO;
@@ -28,7 +27,7 @@ public class PeopleController {
 //    }
 
     @Autowired
-    public PeopleController(PersonDAO personDAO, BookDAO bookDAO) {
+    public PeopleAndBooksController(PersonDAO personDAO, BookDAO bookDAO) {
         this.personDAO = personDAO;
         this.bookDAO = bookDAO;
     }
@@ -59,10 +58,23 @@ public class PeopleController {
         return "people/showPerson";
     }
     @GetMapping("/books/{book_id}")
-    public String showBook(@PathVariable("book_id") int book_id, Model model){
+    public String showBook(@PathVariable("book_id") int book_id, Model model, @ModelAttribute("person") Person person){
         model.addAttribute("book", bookDAO.showBook(book_id));
-        model.addAttribute("person", personDAO.showPerson(bookDAO.showBook(book_id).getPerson_id()));
+        model.addAttribute("personWithBook", personDAO.showPerson(bookDAO.showBook(book_id).getPerson_id()));
+        model.addAttribute("people", personDAO.indexPerson());
         return "books/showBook";
+    }
+
+    @PatchMapping("/books/{book_id}/add")
+    public String personGetBook(@PathVariable("book_id") int book_id, @ModelAttribute("person") Person person){
+        bookDAO.personGetBook(book_id, person.getPerson_id());
+        return "redirect:/books/{book_id}";
+    }
+
+    @PatchMapping ("/books/{book_id}/take_of")
+    public String personReturnBook(@PathVariable("book_id") int book_id){
+        bookDAO.personReturnBook(book_id);
+        return "redirect:/books/{book_id}";
     }
 
 
@@ -70,7 +82,7 @@ public class PeopleController {
 
     @GetMapping("/people/new")
     public String newPerson(@ModelAttribute("person") Person person){
-        return "people/new";
+        return "people/newPerson";
     }
 
     @PostMapping("/people")
@@ -87,7 +99,7 @@ public class PeopleController {
 
     @GetMapping("/books/new")
     public String newBooks(@ModelAttribute("book") Book book){
-        return "books/new";
+        return "books/newBook";
     }
 
     @PostMapping("/books")
@@ -111,7 +123,7 @@ public class PeopleController {
     @GetMapping("/people/{person_id}/edit")
     public String editPerson(Model model,@PathVariable("person_id") int person_id){
         model.addAttribute("person",personDAO.showPerson(person_id));
-        return "people/edit";
+        return "people/editPerson";
     }
 
     @PatchMapping("/people/{person_id}")
@@ -129,7 +141,7 @@ public class PeopleController {
     @GetMapping("/books/{book_id}/edit")
     public String editBook(Model model,@PathVariable("book_id") int book_id){
         model.addAttribute("book",bookDAO.showBook(book_id));
-        return "books/edit";
+        return "books/editBook";
     }
 
     @PatchMapping("/books/{book_id}")
@@ -145,27 +157,15 @@ public class PeopleController {
     }
 
 
-
-
-
-
     @DeleteMapping("/people/{person_id}")
     public String deletePerson(@PathVariable("person_id") int person_id){
         personDAO.deletePerson(person_id);
         return "redirect:/people";
     }
-    @DeleteMapping("/book/{book_id}")
+    @DeleteMapping("/books/{book_id}")
     public String deleteBook(@PathVariable("book_id") int book_id){
         bookDAO.deleteBook(book_id);
         return "redirect:/books";
     }
-
-
-
-
-
-
-
-
 
 }
