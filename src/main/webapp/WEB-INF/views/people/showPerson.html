@@ -15,7 +15,7 @@
     <b>Книги:</b>
     <div th:each="book : ${books}">
         <a th:href="@{/books/{book_id}(book_id=${book.getBook_id()})}"
-           th:text="${book.getName_book()+','+book.getName_author()+','+book.getYear_written()}">user</a>
+           th:text="${book.getName_book()+', '+book.getName_author()+', '+book.getYear_written()}">user</a>
     </div>
 
 </div>

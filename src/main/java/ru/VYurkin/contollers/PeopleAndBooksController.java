@@ -30,9 +30,6 @@ public class PeopleAndBooksController {
         this.bookValidator = bookValidator;
     }
 
-
-
-
     @GetMapping("/people")
     public String indexPeople(Model model){
         model.addAttribute("people", personDAO.indexPerson());
@@ -44,10 +41,6 @@ public class PeopleAndBooksController {
         model.addAttribute("books", bookDAO.indexBook());
         return "books/indexBooks";
     }
-
-
-
-
 
     @GetMapping("/people/{person_id}")
     public String showPerson(@PathVariable("person_id") int person_id, Model model){
@@ -75,9 +68,6 @@ public class PeopleAndBooksController {
         bookDAO.personReturnBook(book_id);
         return "redirect:/books/{book_id}";
     }
-
-
-
 
     @GetMapping("/people/new")
     public String newPerson(@ModelAttribute("person") Person person){
@@ -110,11 +100,6 @@ public class PeopleAndBooksController {
         bookDAO.saveBook(book);
         return "redirect:/books";
     }
-
-
-
-
-
 
     @GetMapping("/people/{person_id}/edit")
     public String editPerson(Model model,@PathVariable("person_id") int person_id){
