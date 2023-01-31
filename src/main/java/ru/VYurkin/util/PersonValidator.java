@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
-import ru.VYurkin.config.DAO.PersonDAO;
+import ru.VYurkin.DAO.PersonDAO;
 import ru.VYurkin.models.Person;
 
 @Component

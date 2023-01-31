@@ -1,4 +1,4 @@
-package ru.VYurkin.config.DAO;
+package ru.VYurkin.DAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,7 +20,7 @@ public class PersonDAO {
     public List<Person> indexPerson() {
         return jdbcTemplate.query("SELECT *FROM Person", new BeanPropertyRowMapper<>(Person.class));}
 
-    public Person showPerson(int person_id) {
+    public Person showPerson(Integer person_id) {
         return jdbcTemplate.query("SELECT*FROM Person WHERE person_id=?", new Object[]{person_id}, new BeanPropertyRowMapper<>(Person.class))
                 .stream().findAny().orElse(null);}
 

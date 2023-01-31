@@ -1,14 +1,15 @@
 package ru.VYurkin.models;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 public class Book {
 
     private int book_id;
 
-    private int person_id;
+    private Integer person_id;
 
     @NotEmpty(message = "Название книги не должно быть пустым")
     @Size(min = 2, max = 100, message = "Название книги должно быть не короче 2 символов, но и не длиннее 100 символов")
@@ -24,18 +25,26 @@ public class Book {
     public Book() {
     }
 
-    public Book(int book_id, String name_book, String name_author, int year_written) {
+//    public Book(int book_id, String name_book, String name_author, int year_written) {
+//        this.book_id = book_id;
+//        this.name_book = name_book;
+//        this.name_author = name_author;
+//        this.year_written = year_written;
+//    }
+
+    public Book(int book_id, Integer person_id, String name_book, String name_author, int year_written) {
         this.book_id = book_id;
+        this.person_id = person_id;
         this.name_book = name_book;
         this.name_author = name_author;
         this.year_written = year_written;
     }
 
-    public int getPerson_id() {
+    public Integer getPerson_id() {
         return person_id;
     }
 
-    public void setPerson_id(int person_id) {
+    public void setPerson_id(Integer person_id) {
         this.person_id = person_id;
     }
 
