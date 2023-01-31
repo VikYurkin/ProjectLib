@@ -11,9 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="11cd663e-03e9-4c7c-96a1-962a0ca22ccf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/contollers/PeopleAndBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/contollers/PeopleAndBooksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/SpringConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +69,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+    <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="ProjectLib:war exploded">
@@ -176,6 +175,8 @@
       <workItem from="1674893015492" duration="497000" />
       <workItem from="1674897123691" duration="59000" />
       <workItem from="1674907308126" duration="219000" />
+      <workItem from="1675005831383" duration="239000" />
+      <workItem from="1675168727708" duration="5403000" />
     </task>
     <task id="LOCAL-00001" summary="Ini">
       <created>1674457019173</created>
@@ -212,7 +213,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674657864313</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Day2 with Valid fix">
+      <created>1675006058950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675006058950</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactor">
+      <created>1675170593816</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1675170593816</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +249,8 @@
     <MESSAGE value="Day1" />
     <MESSAGE value="Day2 without Valid" />
     <MESSAGE value="Day2 with Valid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Day2 with Valid" />
+    <MESSAGE value="Day2 with Valid fix" />
+    <MESSAGE value="Refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor" />
   </component>
 </project>
