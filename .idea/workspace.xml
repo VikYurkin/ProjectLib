@@ -11,15 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="11cd663e-03e9-4c7c-96a1-962a0ca22ccf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/BookMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/DAO/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/PersonDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/MySpringMvccDispatcherServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/MySpringMvccDispatcherServletInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/contollers/PeopleAndBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/contollers/PeopleAndBooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/util/BookValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/util/BookValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/util/PersonValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/util/PersonValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/BookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/PersonDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +40,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2KiRP3tkr8qSvbh5w0j6i2C8TBQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,21 +48,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/Documents/Projects/L1/L1/ProjectLibUpdate",
-    "spring.configuration.checksum": "3673dcb0260e3ae801d2a3cfe56173e4"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Documents/Projects/L1/L1/ProjectLib&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3673dcb0260e3ae801d2a3cfe56173e4&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\Projects\L1\L1\ProjectLib\src\main\webapp\WEB-INF\views\books" />
@@ -184,6 +176,8 @@
       <workItem from="1674907308126" duration="219000" />
       <workItem from="1675005831383" duration="239000" />
       <workItem from="1675168727708" duration="11348000" />
+      <workItem from="1675180168839" duration="748000" />
+      <workItem from="1675230208803" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Ini">
       <created>1674457019173</created>
@@ -241,7 +235,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675174198435</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactoring">
+      <created>1675180465409</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1675180465409</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

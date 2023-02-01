@@ -21,11 +21,11 @@ public class PersonDAO {
         return jdbcTemplate.query("SELECT *FROM Person", new BeanPropertyRowMapper<>(Person.class));}
 
     public Person showPerson(Integer person_id) {
-        return jdbcTemplate.query("SELECT*FROM Person WHERE person_id=?", new Object[]{person_id}, new BeanPropertyRowMapper<>(Person.class))
+        return jdbcTemplate.query("SELECT*FROM Person WHERE person_id=?", new BeanPropertyRowMapper<>(Person.class), person_id)
                 .stream().findAny().orElse(null);}
 
     public Optional<Person> showPerson(String name) {
-        return jdbcTemplate.query("SELECT*FROM Person WHERE name=?", new Object[]{name}, new BeanPropertyRowMapper<>(Person.class))
+        return jdbcTemplate.query("SELECT*FROM Person WHERE name=?",new BeanPropertyRowMapper<>(Person.class), name)
                 .stream().findAny();}
 
 
