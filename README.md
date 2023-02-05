@@ -1,7 +1,7 @@
 # ProjectLib
 Catalog of library
 
-Technology: Spring MVC, Spring Core, JDBC Template, Thymeleaf, PostgreSQL.
+Technology: Maven, Spring MVC, Spring Core, JDBC Template, Thymeleaf, PostgreSQL.
 
 This web apps is a library catalog. The database stores data about people and books.
 
