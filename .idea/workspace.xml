@@ -9,10 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11cd663e-03e9-4c7c-96a1-962a0ca22ccf" name="Changes" comment="">
+    <list default="true" id="11cd663e-03e9-4c7c-96a1-962a0ca22ccf" name="Changes" comment="fix deprecated method">
+      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__add_tables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__created_some_people_and_books.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stop.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/PersonDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/DAO/PersonDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/SpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/config/SpringConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/VYurkin/models/Book.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +38,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="flayway" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -48,26 +66,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Documents/Projects/L1/L1/ProjectLib&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3673dcb0260e3ae801d2a3cfe56173e4&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/Documents/Projects/L1/L1/ProjectLib",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "3673dcb0260e3ae801d2a3cfe56173e4"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Projects\L1\L1\ProjectLib" />
+      <recent name="C:\Users\User\Documents\Projects\L1\L1\ProjectLib\src\main\resources" />
       <recent name="C:\Users\User\Documents\Projects\L1\L1\ProjectLib\src\main\webapp\WEB-INF\views\books" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\Projects\L1\L1\ProjectLib\src\main\resources\db\migration" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.5">
     <configuration name="Tomcat 10.1.5" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.5" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -156,6 +181,31 @@
         </option>
       </method>
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings />
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Dockerfile" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -177,7 +227,12 @@
       <workItem from="1675005831383" duration="239000" />
       <workItem from="1675168727708" duration="11348000" />
       <workItem from="1675180168839" duration="748000" />
-      <workItem from="1675230208803" duration="1049000" />
+      <workItem from="1675230208803" duration="1562000" />
+      <workItem from="1675585496286" duration="747000" />
+      <workItem from="1676441494716" duration="5075000" />
+      <workItem from="1678435950125" duration="73000" />
+      <workItem from="1679142972988" duration="1736000" />
+      <workItem from="1682580077655" duration="20082000" />
     </task>
     <task id="LOCAL-00001" summary="Ini">
       <created>1674457019173</created>
@@ -242,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675180465409</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix deprecated method">
+      <created>1675231468822</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1675231468822</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,6 +329,7 @@
     <MESSAGE value="Day2 with Valid fix" />
     <MESSAGE value="Refactor" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="fix deprecated method" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix deprecated method" />
   </component>
 </project>

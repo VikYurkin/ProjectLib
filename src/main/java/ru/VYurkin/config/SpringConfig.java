@@ -1,5 +1,6 @@
 package ru.VYurkin.config;
 
+import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -68,13 +69,16 @@ public class SpringConfig implements WebMvcConfigurer {
         dataSource.setUrl(environment.getProperty("url"));
         dataSource.setUsername(environment.getProperty("username_"));
         dataSource.setPassword(environment.getProperty("password"));
-
         return dataSource;
     }
-
+    @Bean(initMethod = "migrate")
+    public Flyway FlywayMigrationStrategy(){
+        return Flyway.configure().dataSource(dataSource()).load();
+        }
     @Bean
     public JdbcTemplate jdbcTemplate(){
         return new JdbcTemplate(dataSource());
     }
+
 
 }

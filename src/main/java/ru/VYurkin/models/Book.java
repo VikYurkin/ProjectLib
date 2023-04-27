@@ -1,6 +1,5 @@
 package ru.VYurkin.models;
 
-
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -24,13 +23,6 @@ public class Book {
 
     public Book() {
     }
-
-//    public Book(int book_id, String name_book, String name_author, int year_written) {
-//        this.book_id = book_id;
-//        this.name_book = name_book;
-//        this.name_author = name_author;
-//        this.year_written = year_written;
-//    }
 
     public Book(int book_id, Integer person_id, String name_book, String name_author, int year_written) {
         this.book_id = book_id;

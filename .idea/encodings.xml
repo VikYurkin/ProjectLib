@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/docker-compose.yml" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db.migration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db.migration/V00002__created_groupsub_many_to_many.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V1__add_tables.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__created_some_people_and_books.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration/V00002__created_groupsub_many_to_many.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration/V0001__add_tables.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration/V0001__add_tg_user_table.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/migration/V0002__created_some_people_and_books.sql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/start.sh" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/stop.sh" charset="windows-1251" />
   </component>
 </project>
